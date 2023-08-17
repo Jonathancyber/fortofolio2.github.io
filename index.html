@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>My Portfolio</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#welcome">Welcome</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="content-wrapper">
+        <section id="welcome" class="section" style="background-image: url('disini');">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Jonathan Web Development</p>
+        </section>
+        <section id="skills" class="section" style="background-image: url('disini');">
+            <h2>Skills</h2>
+            <p>My Skill Is Html,Css,Javascript,Sql</p>
+        </section>
+        <section id="about" class="section" style="background-image: url('disini');">
+            <h2>About Me</h2>
+            <p>This website was created just to post some old photos on my discord, so I made it as a website for my memories and I also learned how to make a website..</p>
+        </section>
+        <section id="gallery" class="section" style="background-image: url('disini');">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="image1.jpg" alt="Image 1">
+                    <p>Image 1 Description</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="image2.jpg" alt="Image 2">
+                    <p>Image 2 Description</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="image3.jpg" alt="Image 3">
+                    <p>Image 3 Description</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section" style="background-image: url('contact_bg.svg');">
+            <h2>Contact Me</h2>
+            <div class="contact-form">
+                <input type="text" placeholder="Your Name">
+                <input type="text" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </section>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            });
+        });
+
+        function sendMessage() {
+            alert('Message sent successfully!');
+        }
+    </script>
+</body>
+</html>
